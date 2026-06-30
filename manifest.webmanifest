@@ -1,0 +1,17 @@
+{
+  "name": "Packer",
+  "short_name": "Packer",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3FFF2",
+  "theme_color": "#F3FFF2",
+  "icons": [
+    {
+      "src": "./app.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
