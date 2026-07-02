@@ -1,4 +1,4 @@
-# Travel Packing List
+#Peter Pack-er: Travel Packing List
 
 一个为旅行前打包而做的轻量清单工具。
 
