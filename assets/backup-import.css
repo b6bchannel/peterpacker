@@ -1,0 +1,212 @@
+.import-summary {
+  border-block: 1px solid var(--divider);
+  padding: 12px 0;
+}
+
+.import-summary > p {
+  color: var(--muted);
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.import-counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--divider);
+}
+
+.import-counts span {
+  min-width: 0;
+  background: #fbfff9;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.import-counts b,
+.import-counts small {
+  display: block;
+}
+
+.import-counts b {
+  color: var(--ink);
+  font-size: 21px;
+}
+
+.import-counts small {
+  color: var(--muted);
+  margin-top: 2px;
+  font-size: 11px;
+}
+
+.import-choices {
+  display: grid;
+  border-top: 1px solid var(--divider);
+}
+
+.import-choices button {
+  display: grid;
+  gap: 5px;
+  min-height: 76px;
+  color: var(--ink);
+  text-align: left;
+  background: transparent;
+  border-bottom: 1px solid var(--divider);
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  padding: 12px 10px;
+}
+
+.import-choices button.selected {
+  background: var(--action-primary-soft);
+  border-left-color: var(--action-primary);
+}
+
+.import-choices button.danger.selected {
+  background: var(--action-danger-soft);
+  border-left-color: var(--action-danger);
+}
+
+.import-choices b {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.import-choices b small {
+  color: var(--action-primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.import-choices span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.import-rule-option {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  border-bottom: 1px solid var(--divider);
+  padding: 12px 2px;
+}
+
+.import-rule-option input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--action-primary);
+}
+
+.import-rule-option span,
+.import-rule-option b,
+.import-rule-option small {
+  display: block;
+}
+
+.import-rule-option small {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.import-impact {
+  border-left: 3px solid var(--action-info);
+  padding: 4px 0 4px 12px;
+}
+
+.import-impact h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.import-impact p {
+  color: var(--muted);
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.import-empty-note,
+.import-error p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.import-empty-note {
+  border-left: 3px solid var(--action-info);
+  padding: 8px 0 8px 12px;
+}
+
+.import-error {
+  border-left: 3px solid var(--action-danger);
+  padding: 8px 0 8px 12px;
+}
+
+.import-error b {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.import-recovery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  border-block: 1px solid var(--divider);
+  padding: 11px 2px;
+}
+
+.import-recovery div,
+.import-recovery b,
+.import-recovery span {
+  min-width: 0;
+  display: block;
+}
+
+.import-recovery span {
+  color: var(--muted);
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.import-recovery button {
+  min-height: 38px;
+  color: var(--action-primary);
+  background: transparent;
+  border: 1px solid var(--action-primary);
+  border-radius: 6px;
+  padding: 0 10px;
+  font-weight: 700;
+}
+
+.sheet-actions .primary {
+  color: #fff;
+  background: var(--action-primary);
+}
+
+.sheet-actions .primary:active {
+  background: var(--action-primary-pressed);
+}
+
+@media (width <= 420px) {
+  .import-counts small {
+    font-size: 10px;
+  }
+
+  .import-recovery {
+    grid-template-columns: 1fr;
+  }
+
+  .import-recovery button {
+    width: 100%;
+  }
+}

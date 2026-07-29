@@ -4,15 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#F3FFF2" />
-    <link rel="preload" href="./fonts/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Packer" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./app.png" />
     <title>Travel Packing List</title>
+    <style>
+      html,
+      body,
+      #root {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        background: #f3fff2;
+      }
+
+      .packer-launch {
+        width: min(760px, 100%);
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: max(26px, env(safe-area-inset-top)) 22px 40px;
+        box-sizing: border-box;
+        color: #282828;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .packer-launch h1 {
+        margin: 8px 2px 30px;
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .packer-launch-card {
+        position: relative;
+        min-height: 118px;
+        margin: 0 0 22px;
+        overflow: hidden;
+        border-radius: 0 10px 10px;
+        background: #dccff4;
+      }
+
+      .packer-launch-card::before {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: 0;
+        width: 42%;
+        height: 34px;
+        border-radius: 18px 22px 0 0;
+        background: inherit;
+      }
+
+      .packer-launch-line {
+        height: 14px;
+        margin: 25px 22px 0;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #ffffff70 25%, #ffffffbd 50%, #ffffff70 75%);
+        background-size: 220% 100%;
+        animation: packer-launch-shimmer 1.15s ease-in-out infinite;
+      }
+
+      .packer-launch-line.short {
+        width: 46%;
+        margin-top: 14px;
+      }
+
+      .packer-launch-card.second {
+        min-height: 96px;
+        background: #b0e6d6;
+        opacity: 0.72;
+      }
+
+      .packer-launch-note {
+        margin: 6px 2px 0;
+        color: #6f6f6f;
+        font-size: 13px;
+      }
+
+      @keyframes packer-launch-shimmer {
+        from {
+          background-position: 100% 0;
+        }
+        to {
+          background-position: -100% 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .packer-launch-line {
+          animation: none;
+        }
+      }
+    </style>
     <script type="module" crossorigin src="./assets/index-CNtaFij_.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-D22QyEbH.css">
+    <link rel="stylesheet" href="./assets/backup-import.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="packer-launch" role="status" aria-label="正在打开 Packer">
+        <h1>Packer</h1>
+        <section class="packer-launch-card" aria-hidden="true">
+          <div class="packer-launch-line"></div>
+          <div class="packer-launch-line short"></div>
+        </section>
+        <section class="packer-launch-card second" aria-hidden="true">
+          <div class="packer-launch-line"></div>
+          <div class="packer-launch-line short"></div>
+        </section>
+        <p class="packer-launch-note">正在准备你的打包清单…</p>
+      </main>
+    </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("./sw.js", {
+            scope: "./",
+            updateViaCache: "none"
+          }).catch(function (error) {
+            console.warn("Packer 离线缓存未启用：", error);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
