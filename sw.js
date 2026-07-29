@@ -1,5 +1,5 @@
 const PACKER_CACHE_PREFIX = "peterpacker-shell-";
-const PACKER_CACHE = `${PACKER_CACHE_PREFIX}2026-07-29-speed-v1`;
+const PACKER_CACHE = `${PACKER_CACHE_PREFIX}2026-07-29-startup-v2`;
 const PACKER_SCOPE = self.registration.scope;
 const PACKER_INDEX = new URL("index.html", PACKER_SCOPE).href;
 const PACKER_SHELL = [
@@ -30,7 +30,9 @@ async function cacheCurrentShell() {
 }
 
 self.addEventListener("install", event => {
-  event.waitUntil(cacheCurrentShell());
+  event.waitUntil(
+    cacheCurrentShell().then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", event => {

@@ -46,28 +46,56 @@
 
 .import-choices button {
   display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
   gap: 5px;
+  column-gap: 10px;
   min-height: 76px;
   color: var(--ink);
   text-align: left;
   background: transparent;
   border-bottom: 1px solid var(--divider);
-  border-left: 3px solid transparent;
   border-radius: 0;
-  padding: 12px 10px;
+  padding: 12px;
+}
+
+.import-choices button::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  border: 2px solid #9ba0af;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .import-choices button.selected {
   background: var(--action-primary-soft);
-  border-left-color: var(--action-primary);
+}
+
+.import-choices button.selected::before {
+  content: "✓";
+  border-color: var(--action-primary);
+  background: var(--action-primary);
 }
 
 .import-choices button.danger.selected {
   background: var(--action-danger-soft);
-  border-left-color: var(--action-danger);
+}
+
+.import-choices button.danger.selected::before {
+  border-color: var(--action-danger);
+  background: var(--action-danger);
 }
 
 .import-choices b {
+  grid-column: 2;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -81,6 +109,7 @@
 }
 
 .import-choices span {
+  grid-column: 2;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
@@ -116,8 +145,7 @@
 }
 
 .import-impact {
-  border-left: 3px solid var(--action-info);
-  padding: 4px 0 4px 12px;
+  padding: 4px 0;
 }
 
 .import-impact h3 {
