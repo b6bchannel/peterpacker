@@ -1,5 +1,5 @@
 const PACKER_CACHE_PREFIX = "peterpacker-shell-";
-const PACKER_CACHE = `${PACKER_CACHE_PREFIX}2026-07-29-startup-v2`;
+const PACKER_CACHE = `${PACKER_CACHE_PREFIX}2026-07-30-backup-share-v1`;
 const PACKER_SCOPE = self.registration.scope;
 const PACKER_INDEX = new URL("index.html", PACKER_SCOPE).href;
 const PACKER_SHELL = [

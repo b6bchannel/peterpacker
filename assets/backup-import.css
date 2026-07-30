@@ -178,6 +178,63 @@
   padding: 8px 0 8px 12px;
 }
 
+.backup-reminder {
+  min-height: 34px;
+  margin: -4px 2px 12px;
+  border-bottom: 1px solid var(--divider);
+  color: var(--muted);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.backup-reminder button {
+  min-height: 32px;
+  flex: none;
+  color: #586fbe;
+  background: transparent;
+  padding: 4px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.backup-feedback {
+  color: var(--muted);
+  margin: -6px 2px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.backup-export-info {
+  border-bottom: 1px solid var(--divider);
+  padding: 2px 2px 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.backup-export-info span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.backup-export-info .backup-export-notice {
+  color: var(--action-primary);
+  font-weight: 700;
+}
+
+.backup-export-info p {
+  color: var(--muted);
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.data-actions button {
+  font-size: 13px;
+}
+
 .import-error b {
   display: block;
   margin-bottom: 5px;
